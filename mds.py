@@ -139,7 +139,7 @@ def run(path, q, k, out):
     out.mkdir(parents=True, exist_ok=True)
     tag = 'inf' if math.isinf(q) else format(q, 'g')
     base = out / f'{Path(path).stem}_mds_q{tag}_{k}D'
-    csv_path = base.with_name(base.name + '_embedding.csv')
+    csv_path = Path(str(base) + '.csv')
     np.savetxt(csv_path, y, delimiter=',', header=','.join(f'MDS{i+1}' for i in range(k)), comments='')
     saved = np.loadtxt(csv_path, delimiter=',', skiprows=1, ndmin=2)
     assert saved.shape == y.shape and np.array_equal(saved, y)
@@ -163,6 +163,7 @@ def run(path, q, k, out):
     report['checks'] = {name: bool(value) for name, value in checks.items()}
     report['all_checks_passed'] = all(checks.values())
     Path(str(base) + '_diagnostics.json').write_text(json.dumps(report, indent=2) + '\n')
+    print(json.dumps(eigenvalues.tolist()))
     print(f'q={tag}, k={k}, shape={y.shape}, RMSE={rmse:.9g}, genuine negatives={report["genuine_negative_eigenvalues"]}, checks=PASS')
     return report
 
