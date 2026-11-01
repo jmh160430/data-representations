@@ -1,0 +1,94 @@
+{
+  "selection_complete": true,
+  "recorded_at_utc": "2026-11-01T17:54:57.178621+00:00",
+  "selection_preceded_q_experiments": true,
+  "rationale": "Chosen before experiments for contrasts in chemical scale imbalance (Wine), correlated geometry (Seeds), and oxide composition plus refractive index (Glass). Exactly three; no replacements. All n<=214, feature counts>=7; dense O(n^2) storage and O(n^3) EVD feasible with one BLAS thread.",
+  "datasets": [
+    {
+      "slug": "wine",
+      "uci_id": 109,
+      "title": "Wine",
+      "url": "https://archive.ics.uci.edu/dataset/109/wine",
+      "source_files": [
+        "wine.data"
+      ],
+      "archive": "data/stage4/sources/wine.zip",
+      "matrix": "data/stage4/wine.csv",
+      "sha256": "3154de22484eb7a9537d8b42ff2dc05f690ff5631999681bfe452e1f9a0f9847",
+      "archive_sha256": "2bae62c4481220623579d4c4fb36b55652b6b75e06e49fa1981b8198362dfdab",
+      "observations": 178,
+      "numeric_features": 13,
+      "feature_names": [
+        "alcohol",
+        "malic_acid",
+        "ash",
+        "alcalinity_of_ash",
+        "magnesium",
+        "total_phenols",
+        "flavanoids",
+        "nonflavanoid_phenols",
+        "proanthocyanins",
+        "color_intensity",
+        "hue",
+        "od280_od315",
+        "proline"
+      ],
+      "excluded": "column 1 cultivar class",
+      "missing": "Official documentation: no missing values; no missing marker specified. All rows parse as finite numbers. No imputation or row removal. Zeros retained."
+    },
+    {
+      "slug": "seeds",
+      "uci_id": 236,
+      "title": "Seeds",
+      "url": "https://archive.ics.uci.edu/dataset/236/seeds",
+      "source_files": [
+        "seeds_dataset.txt"
+      ],
+      "archive": "data/stage4/sources/seeds.zip",
+      "matrix": "data/stage4/seeds.csv",
+      "sha256": "b47644043a5848cb7c1eddf475ef93e8442ab6a3cfcd16a569b6e14ee3e6cdb8",
+      "archive_sha256": "5033bd71b24592fa70d9b3cc5be02332dc6d03d0b27e6655e6d553f39afab323",
+      "observations": 210,
+      "numeric_features": 7,
+      "feature_names": [
+        "area",
+        "perimeter",
+        "compactness",
+        "kernel_length",
+        "kernel_width",
+        "asymmetry_coefficient",
+        "groove_length"
+      ],
+      "excluded": "column 8 variety code; official prose lists exactly seven geometric features, despite incomplete API variable metadata",
+      "missing": "Official documentation: no missing values; no missing marker specified. All rows parse as finite numbers. No imputation or row removal. Zeros retained."
+    },
+    {
+      "slug": "glass",
+      "uci_id": 42,
+      "title": "Glass Identification",
+      "url": "https://archive.ics.uci.edu/dataset/42/glass+identification",
+      "source_files": [
+        "glass.data"
+      ],
+      "archive": "data/stage4/sources/glass.zip",
+      "matrix": "data/stage4/glass.csv",
+      "sha256": "2898e0fbe05f7eb88ed6260f5a3285be6ac3d078e3b34536bcbb1f742357e2f6",
+      "archive_sha256": "499c07a17115bf63100bb19cc1fdefad7f464bf5dc2b168930fa2071fd6b6e65",
+      "observations": 214,
+      "numeric_features": 9,
+      "feature_names": [
+        "refractive_index",
+        "sodium",
+        "magnesium",
+        "aluminum",
+        "silicon",
+        "potassium",
+        "calcium",
+        "barium",
+        "iron"
+      ],
+      "excluded": "column 1 ID and column 11 glass class",
+      "missing": "Official documentation: no missing values; no missing marker specified. All rows parse as finite numbers. No imputation or row removal. Zeros retained."
+    }
+  ]
+}

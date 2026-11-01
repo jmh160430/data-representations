@@ -1,0 +1,11 @@
+{
+  "exactly_three_datasets": true,
+  "36_cli_runs": true,
+  "36_embeddings": true,
+  "36_passed_diagnostics": true,
+  "18_metric_rows": true,
+  "six_pca_comparisons": true,
+  "report_links_exist": true,
+  "earlier_tracked_files_unchanged": true,
+  "selection_before_runs": true
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "dataset": "wine",
+    "dimensions": 2,
+    "pairwise_distance_max_abs": 2.3092638912203256e-12,
+    "tolerance": 5.542014669056801e-09,
+    "passed": true
+  },
+  {
+    "dataset": "wine",
+    "dimensions": 3,
+    "pairwise_distance_max_abs": 1.0942358130705543e-11,
+    "tolerance": 5.542014669056801e-09,
+    "passed": true
+  },
+  {
+    "dataset": "seeds",
+    "dimensions": 2,
+    "pairwise_distance_max_abs": 1.5987211554602254e-14,
+    "tolerance": 5.561557319872392e-11,
+    "passed": true
+  },
+  {
+    "dataset": "seeds",
+    "dimensions": 3,
+    "pairwise_distance_max_abs": 1.7430501486614958e-14,
+    "tolerance": 5.561557319872392e-11,
+    "passed": true
+  },
+  {
+    "dataset": "glass",
+    "dimensions": 2,
+    "pairwise_distance_max_abs": 1.4410347914939337e-14,
+    "tolerance": 5.7196721412718006e-11,
+    "passed": true
+  },
+  {
+    "dataset": "glass",
+    "dimensions": 3,
+    "pairwise_distance_max_abs": 5.484501741648273e-14,
+    "tolerance": 5.7196721412718006e-11,
+    "passed": true
+  }
+]
