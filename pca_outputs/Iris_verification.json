@@ -1,0 +1,127 @@
+{
+  "dataset": "Iris",
+  "input": "/workspace/data-representations/Iris.csv",
+  "shape": [
+    150,
+    4
+  ],
+  "excluded_index_columns": [],
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "routine": "numpy.linalg.svd(full_matrices=False)",
+  "checks": [
+    {
+      "variant": "upca",
+      "dimensions": [
+        150,
+        2
+      ],
+      "equivalence_max_abs": 1.7763568394002505e-14,
+      "equivalence_tolerance": 3.19579920901119e-10,
+      "orthonormality_max_abs": 4.440892098500626e-16,
+      "orthonormality_tolerance": 3.3306690738754696e-12,
+      "singular_values": [
+        95.95066751235814,
+        17.722953278750552,
+        3.4692966644142356,
+        1.8789123626216575
+      ],
+      "singular_order_passed": true,
+      "reconstruction_max_abs": 2.1316282072803006e-14,
+      "embedding_mean_max_abs": 7.679193669296387,
+      "centered_mean_tolerance": null,
+      "finite": true,
+      "png": "/workspace/data-representations/pca_outputs/Iris_upca_2D.png",
+      "png_size": [
+        1280,
+        960
+      ],
+      "png_verified": true
+    },
+    {
+      "variant": "upca",
+      "dimensions": [
+        150,
+        3
+      ],
+      "equivalence_max_abs": 1.7763568394002505e-14,
+      "equivalence_tolerance": 3.19579920901119e-10,
+      "orthonormality_max_abs": 4.440892098500626e-16,
+      "orthonormality_tolerance": 3.3306690738754696e-12,
+      "singular_values": [
+        95.95066751235814,
+        17.722953278750552,
+        3.4692966644142356,
+        1.8789123626216575
+      ],
+      "singular_order_passed": true,
+      "reconstruction_max_abs": 2.1316282072803006e-14,
+      "embedding_mean_max_abs": 7.679193669296387,
+      "centered_mean_tolerance": null,
+      "finite": true,
+      "png": "/workspace/data-representations/pca_outputs/Iris_upca_3D.png",
+      "png_size": [
+        1280,
+        960
+      ],
+      "png_verified": true
+    },
+    {
+      "variant": "cpca",
+      "dimensions": [
+        150,
+        2
+      ],
+      "equivalence_max_abs": 3.1086244689504383e-15,
+      "equivalence_tolerance": 8.356603402226394e-11,
+      "orthonormality_max_abs": 4.440892098500626e-16,
+      "orthonormality_tolerance": 3.3306690738754696e-12,
+      "singular_values": [
+        25.08986397889987,
+        6.007852542506333,
+        3.420535382952358,
+        1.8785023401034904
+      ],
+      "singular_order_passed": true,
+      "reconstruction_max_abs": 2.6645352591003757e-15,
+      "embedding_mean_max_abs": 2.4898601698926843e-15,
+      "centered_mean_tolerance": 8.356603402226394e-11,
+      "finite": true,
+      "png": "/workspace/data-representations/pca_outputs/Iris_cpca_2D.png",
+      "png_size": [
+        1280,
+        960
+      ],
+      "png_verified": true
+    },
+    {
+      "variant": "cpca",
+      "dimensions": [
+        150,
+        3
+      ],
+      "equivalence_max_abs": 3.1086244689504383e-15,
+      "equivalence_tolerance": 8.356603402226394e-11,
+      "orthonormality_max_abs": 4.440892098500626e-16,
+      "orthonormality_tolerance": 3.3306690738754696e-12,
+      "singular_values": [
+        25.08986397889987,
+        6.007852542506333,
+        3.420535382952358,
+        1.8785023401034904
+      ],
+      "singular_order_passed": true,
+      "reconstruction_max_abs": 2.6645352591003757e-15,
+      "embedding_mean_max_abs": 2.4898601698926843e-15,
+      "centered_mean_tolerance": 8.356603402226394e-11,
+      "finite": true,
+      "png": "/workspace/data-representations/pca_outputs/Iris_cpca_3D.png",
+      "png_size": [
+        1280,
+        960
+      ],
+      "png_verified": true
+    }
+  ],
+  "all_checks_passed": true
+}
