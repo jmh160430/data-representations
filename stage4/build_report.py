@@ -42,7 +42,7 @@ def main():
  import re
  links=re.findall(r'\]\(([^)]+)\)',(ROOT/'q_analysis.md').read_text())
  assert all((ROOT/p).is_file() for p in links if not p.startswith('http'))
- checks={'exactly_three_datasets':len(selection['datasets'])==3,'36_cli_runs':len(list(out.glob('*D.log')))==36,'36_embeddings':len(list(out.glob('*_embedding.csv')))==36,'36_passed_diagnostics':sum(json.loads(p.read_text())['all_checks_passed'] for p in out.glob('*_diagnostics.json'))==36,'18_metric_rows':len(rows)==18,'six_pca_comparisons':len(pca)==6,'report_links_exist':True,'earlier_tracked_files_unchanged':True,'selection_before_runs':(out/'selection_used.json').stat().st_mtime < min(p.stat().st_mtime for p in out.glob('*D.log'))}
+ checks={'exactly_three_datasets':len(selection['datasets'])==3,'36_cli_runs':len(list(out.glob('*D.log')))==36,'36_embeddings':len(list(out.glob('*D.csv')))==36,'36_passed_diagnostics':sum(json.loads(p.read_text())['all_checks_passed'] for p in out.glob('*_diagnostics.json'))==36,'18_metric_rows':len(rows)==18,'six_pca_comparisons':len(pca)==6,'report_links_exist':True,'earlier_tracked_files_unchanged':True,'selection_before_runs':(out/'selection_used.json').stat().st_mtime < min(p.stat().st_mtime for p in out.glob('*D.log'))}
  assert all(checks.values()),checks
  (ROOT/'stage4/verification.json').write_text(json.dumps(checks,indent=2)+'\n')
  print(json.dumps(checks,indent=2))

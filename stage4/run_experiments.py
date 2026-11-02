@@ -14,7 +14,7 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "code"))
 import numpy as np
 import mds
 
@@ -53,7 +53,7 @@ def main():
             diagnostics = []
             embeddings = []
             for k in (2, 3):
-                command = [sys.executable, 'mds.py', '--input', ds['matrix'], '--q', q,
+                command = [sys.executable, 'code/mds.py', '--input', ds['matrix'], '--q', q,
                            '--dimensions', str(k), '--output-dir', str(out)]
                 env = dict(os.environ, OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1')
                 run = subprocess.run(command, text=True, capture_output=True, env=env)
@@ -64,7 +64,7 @@ def main():
                 diag = json.loads(Path(str(base)+'_diagnostics.json').read_text())
                 assert diag['all_checks_passed']
                 diagnostics.append(diag)
-                embeddings.append(np.loadtxt(str(base)+'_embedding.csv', delimiter=',', skiprows=1))
+                embeddings.append(np.loadtxt(str(base)+'.csv', delimiter=',', skiprows=1))
             e = np.asarray(diagnostics[0]['eigenvalues'])
             tau = diagnostics[0]['gram_tolerance']
             positive = np.maximum(e, 0)
